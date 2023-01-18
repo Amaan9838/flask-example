@@ -1,7 +1,6 @@
 # Using flask to make an api
 # import necessary libraries and functions
 from flask import Flask, jsonify, request, url_for
-from flask_cors import CORS
 import os
 import requests
 import json
@@ -120,4 +119,3 @@ def scrap_reels():
 if __name__ == '__main__':
 
 	application.run(debug = True)
-CORS(application)
