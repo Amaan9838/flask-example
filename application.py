@@ -47,7 +47,7 @@ def IG_LOGIN(username,password):
             if json_data["authenticated"]:
                 cookies = login_response.cookies
                 cookie_jar = cookies.get_dict()
-                IG_LOGIN(username = "amaan.2802",password = "Ashar123")
+                IG_LOGIN(username = "ams0000026",password = "9876543210")
 
                 json_object = json.dumps(cookie_jar, indent = 4)
                 with open("cookie.json", "w") as outfile:
