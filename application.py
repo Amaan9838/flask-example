@@ -82,26 +82,33 @@ def scrap_reels():
     target = format(source)
     if target[:31] == "https://www.instagram.com/reel/" :
      cut_reel = target[31:42]
-     
+     user_id = requests.get(f"https://www.instagram.com/{cut_story}/?__a=1&__d=dis",headers=headers, cookies=cookie_jar).json()
+     is_priv = user_id['graphql']['user']['is_private']  
      user_id_req = requests.get(f"https://www.instagram.com/p/{cut_reel}/?__a=1&__d=dis",headers=headers, cookies=cookie_jar).json()
      meta = {
-        "posts": user_id_req
+        "posts": user_id_req,
+        "account":is_priv,
     }
     elif target[:28] == "https://www.instagram.com/p/" :
      cut_post = target[28:39]
-     
+     user_id = requests.get(f"https://www.instagram.com/{cut_story}/?__a=1&__d=dis",headers=headers, cookies=cookie_jar).json()
+     is_priv = user_id['graphql']['user']['is_private']  
      user_id_req = requests.get(f"https://www.instagram.com/p/{cut_post}/?__a=1&__d=dis",headers=headers, cookies=cookie_jar).json()
      meta = {
-        "posts": user_id_req
+        "posts": user_id_req,
+        "account":is_priv,
     }
     elif target[:34] == "https://www.instagram.com/stories/":
       cut_story = target[34:-21]
+      user_id_req = requests.get(f"https://www.instagram.com/{cut_story}/?__a=1&__d=dis",headers=headers, cookies=cookie_jar).json()
+      is_priv = user_id_req['graphql']['user']['is_private']  
       user_id = requests.get(f"https://www.instagram.com/stories/{cut_story}/?__a=1&__d=dis",headers=headers, cookies=cookie_jar).json()
       uniqid = user_id['user']['id']
       user_id_req = requests.get(f"https://www.instagram.com/api/v1/feed/reels_media/?reel_ids={uniqid}",headers=headers, cookies=cookie_jar).json()
       meta = {
         "story": user_id_req,
         "uniqid":uniqid,
+        "account":is_priv,
        }
     else :
         ydl_opts = {}
