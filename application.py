@@ -112,7 +112,7 @@ def scrap_reels():
         "uniqid":uniqid,
         "account": is_priv,
        }
-    else :
+    elif target[:24] == "https://www.facebook.com/" or target[:17] == "https://fb.watch/":
         ydl_opts = {}
         
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
@@ -121,7 +121,25 @@ def scrap_reels():
         meta = {
             "ytdll": info,
         }
-    return jsonify(meta)
+    else:
+        cut = target[-11:]
+        url = "https://youtube-video-download-info.p.rapidapi.com/dl"
+
+        querystring = {"id": cut}
+
+        headers = {
+	"X-RapidAPI-Key": "6e7e0e613dmsh7da1932734a8a9ap14bcb6jsn4c51c4a9f466",
+	"X-RapidAPI-Host": "youtube-video-download-info.p.rapidapi.com"
+      }
+
+    response = requests.request("GET", url, headers=headers, params=querystring).json()
+    if target[:32] == "https://www.youtube.com/watch?v=" or target[:31] == "https://www.youtube.com/shorts/" or target[:27] == "https://youtube.com/shorts/" or target[:17] == "https://youtu.be/":
+       
+       return (response)
+        
+    else:
+
+       return jsonify(meta)
 #http://127.0.0.1:5000/home?source=https://www.facebook.com/watch?v=1245895546280667
 
 # driver function
