@@ -132,7 +132,7 @@ def scrap_reels():
 	"X-RapidAPI-Host": "youtube-video-download-info.p.rapidapi.com"
       }
 
-    response = requests.request("GET", url, headers=headers, params=querystring).json()
+        response = requests.request("GET", url, headers=headers, params=querystring).json()
     if target[:32] == "https://www.youtube.com/watch?v=" or target[:31] == "https://www.youtube.com/shorts/" or target[:27] == "https://youtube.com/shorts/" or target[:17] == "https://youtu.be/":
        
        return (response)
