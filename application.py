@@ -60,7 +60,7 @@ def IG_LOGIN(username,password):
 def home():
 	if(request.method == 'GET'):
 
-		data = "hello world"
+		data = "hello Brother"
 		return jsonify({'data': data})
 
 
