@@ -1,6 +1,6 @@
 Are you tired of struggling to download videos from your favorite websites? Savefromus.com video downloader is here to save the day!
 
-With <a href="https://savefromus.com/ >Savefromus.com</a>", you can easily download videos from popular video sharing platforms such as YouTube, Vimeo, Facebook, Instagram, and many more. This online tool provides you with a hassle-free way to download high-quality videos without any technical skills or software installation.
+With https://savefromus.com/, you can easily download videos from popular video sharing platforms such as YouTube, Vimeo, Facebook, Instagram, and many more. This online tool provides you with a hassle-free way to download high-quality videos without any technical skills or software installation.
 
 Savefromus.com video downloader is incredibly user-friendly and easy to use. You can simply copy the video link from your browser, paste it into the downloader, and hit download. The downloader will provide you with different format options such as MP4, AVI, FLV, WMV, and many others. You can choose the format that works best for you and download the video in just a few clicks.
 
