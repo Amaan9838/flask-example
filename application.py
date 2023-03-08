@@ -7,60 +7,20 @@ import json
 from datetime import datetime
 import requests
 import youtube_dl
-
+import random 
 # creating a Flask app
 application= Flask(__name__)
 
 # on the terminal type: curl http://127.0.0.1:5000/
 # returns hello world when we use GET.
 # returns the data that we send when we use POST.
-def IG_LOGIN(username,password):
-        try:
-            with open('cookie.json', 'r') as openfile:
-                   #Reading from json file
-                return json.load(openfile)
-        except:               
-            link = 'https://www.instagram.com/accounts/login/'
-            login_url = 'https://www.instagram.com/accounts/login/ajax/'
-                
-            time = int(datetime.now().timestamp())
-            response = requests.get(login_url)
-            csrf = response.cookies['csrftoken']
-                
-            payload = {
-                'username': username,
-                'enc_password': f'#PWD_INSTAGRAM_BROWSER:0:{time}:{password}',
-                'queryParams': {},
-                'optIntoOneTap': 'false'
-             }
-                
-            login_header = {
-                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36",
-                "X-Requested-With": "XMLHttpRequest",
-                "Referer" : "https://www.instagram.com/acounts/login",
-                "x-csrftoken": csrf
-            }
-                
-            login_response = requests.post(login_url, data=payload, headers=login_header)
-            json_data = json.loads(login_response.text)
 
-            if json_data["authenticated"]:
-                cookies = login_response.cookies
-                cookie_jar = cookies.get_dict()
-                IG_LOGIN(username = "ams0000026",password = "9876543210")
-
-                json_object = json.dumps(cookie_jar, indent = 4)
-                with open("cookie.json", "w") as outfile:
-                    outfile.write(json_object)
-                return cookie_jar
-            else:
-                return "login failed", login_response.text
 
 @application.route('/', methods = ['GET', 'POST'])
 def home():
 	if(request.method == 'GET'):
 
-		data = "hello Brother"
+		data = "hello world"
 		return jsonify({'data': data})
 
 
@@ -70,8 +30,10 @@ def home():
 # this returns 100 (square of 10)
 @application.route('/home', methods = ['GET'])
 def scrap_reels():
-    
-    cookie_jar = IG_LOGIN(username="amaan.2802",password="Ashar123")
+    a = {"csrftoken":"ZAyaenm8ZGR4BNKeiNfosZlnsyheSBrA","sessionid":"58589135759%3AqHibKdAiXk37I7%3A12%3AAYffm45O5HuhedO9NYvDuBNCqh1731OsNwo7W0hMaQ"}
+    b = {"csrftoken":"IG0DzqRV1ppZRV678sHe3VpvqZhmvmhi","sessionid":"53260173968%3ASTP9ZPAzAzppKo%3A26%3AAYcMn4KreOpcoqDGRJXxfFoeTm-xMFzeSIGIow54Qg"} 
+    c= [a,b]
+    cookie_jar = random.choice(c)
     headers = {
             'user-agent': 'Mozilla/5.0 (Linux; Android 8.1.0; motorola one Build/OPKS28.63-18-3; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/70.0.3538.80 Mobile Safari/537.36 Instagram 72.0.0.21.98 Android (27/8.1.0; 320dpi; 720x1362; motorola; motorola one; deen_sprout; qcom; pt_BR; 132081645)'
          }
@@ -97,23 +59,6 @@ def scrap_reels():
         }
     elif target[:34] == "https://www.instagram.com/stories/":
       cut_story = target[34:-21]
-      user_id = requests.get(f"https://www.instagram.com/{cut_story}?__a=1&__d=dis",headers=headers, cookies=cookie_jar).json()
-      is_priv = user_id['graphql']['user']['is_private']
-      if is_priv == True:
-         meta = {
-        "account": is_priv,
-       }
-      elif is_priv == False:
-       user_id = requests.get(f"https://www.instagram.com/stories/{cut_story}/?__a=1&__d=dis",headers=headers, cookies=cookie_jar).json()
-       uniqid = user_id['user']['id']
-       user_id_req = requests.get(f"https://www.instagram.com/api/v1/feed/reels_media/?reel_ids={uniqid}",headers=headers, cookies=cookie_jar).json()
-       meta = {
-        "story": user_id_req,
-        "uniqid":uniqid,
-        "account": is_priv,
-       }
-    elif target[:30] == "https://instagram.com/stories/" :
-      cut_story = target[30:-40]
       user_id = requests.get(f"https://www.instagram.com/{cut_story}?__a=1&__d=dis",headers=headers, cookies=cookie_jar).json()
       is_priv = user_id['graphql']['user']['is_private']
       if is_priv == True:
