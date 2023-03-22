@@ -30,8 +30,8 @@ def home():
 # this returns 100 (square of 10)
 @application.route('/home', methods = ['GET'])
 def scrap_reels():
-   a = {"csrftoken":"OtXuYEhmjfGbUakafVGYi4G00yNLL5hX","sessionid":"58522898773%3AbFo2lJcOlPSnxn%3A22%3AAYfHrPx3RgpaUlBHjTLHLaXXZQFq8tILiXyWrofYZg"}
-   b = {"csrftoken":"IRGlNQduOhdjr7EqQEuswtykpMjtKkYo","sessionid":"58499749216%3AtUPGz3LuUVi8nL%3A6%3AAYcPWUwvoU6kgFnDGEv85zyZvWwBgTGJUGdDv-BXpQ"}
+    a = {"csrftoken":"OtXuYEhmjfGbUakafVGYi4G00yNLL5hX","sessionid":"58522898773%3AbFo2lJcOlPSnxn%3A22%3AAYfHrPx3RgpaUlBHjTLHLaXXZQFq8tILiXyWrofYZg"}
+    b = {"csrftoken":"IRGlNQduOhdjr7EqQEuswtykpMjtKkYo","sessionid":"58499749216%3AtUPGz3LuUVi8nL%3A6%3AAYcPWUwvoU6kgFnDGEv85zyZvWwBgTGJUGdDv-BXpQ"}
     c= [a,b]
     cookie_jar = random.choice(c)
     headers = {
