@@ -31,8 +31,8 @@ def home():
 @application.route('/home', methods = ['GET'])
 def scrap_reels():
     a = {"csrftoken":"OtXuYEhmjfGbUakafVGYi4G00yNLL5hX","sessionid":"58522898773%3AbFo2lJcOlPSnxn%3A22%3AAYfHrPx3RgpaUlBHjTLHLaXXZQFq8tILiXyWrofYZg"}
-    b = {"csrftoken":"IRGlNQduOhdjr7EqQEuswtykpMjtKkYo","sessionid":"58499749216%3AtUPGz3LuUVi8nL%3A6%3AAYcPWUwvoU6kgFnDGEv85zyZvWwBgTGJUGdDv-BXpQ"}
-    c= [a,b]
+    b =  {"csrftoken":"LgKDfrOcBx8klWSfrOYJdgndeRZ928dB","sessionid":"58522898773%3Aq3VCOKTNOnAyUJ%3A25%3AAYf60TgS0-RtpRZjKgcrayEGKv7Abpco4Pmwz1Tndw"}
+    c= [b]
     cookie_jar = random.choice(c)
     headers = {
             'user-agent': 'Mozilla/5.0 (Linux; Android 8.1.0; motorola one Build/OPKS28.63-18-3; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/70.0.3538.80 Mobile Safari/537.36 Instagram 72.0.0.21.98 Android (27/8.1.0; 320dpi; 720x1362; motorola; motorola one; deen_sprout; qcom; pt_BR; 132081645)'
