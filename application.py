@@ -30,9 +30,14 @@ def home():
 # this returns 100 (square of 10)
 @application.route('/home', methods = ['GET'])
 def scrap_reels():
-    a = {"csrftoken":"OtXuYEhmjfGbUakafVGYi4G00yNLL5hX","sessionid":"58522898773%3AbFo2lJcOlPSnxn%3A22%3AAYfHrPx3RgpaUlBHjTLHLaXXZQFq8tILiXyWrofYZg"}
-    b =  {"csrftoken":"gj4sqlZEwd5b4Z8ueoHMkWPZhvPzWkrI","sessionid":"58522898773%3AmpatwYXqAlx9E2%3A5%3AAYfZTyUxsngK59Md6WSrAVwx9wpssaPQtzow3xp3yw"}
-    c= [b]
+    a = {"csrftoken":"aozTm225KYsVzGm4FXTnmNPmMBN1ptsc","sessionid":"58499749216%3ASBVvTqWPY1a1HY%3A22%3AAYexSKMidUcIJHv_FIOoXEMDrDgSFl-v8zQKJtA2Eg"}#amsterdam34158
+    b =  {"csrftoken":"gj4sqlZEwd5b4Z8ueoHMkWPZhvPzWkrI","sessionid":"58522898773%3AmpatwYXqAlx9E2%3A5%3AAYfZTyUxsngK59Md6WSrAVwx9wpssaPQtzow3xp3yw"} #farzi_kalosxyz  246800
+    d =  {"csrftoken":"mfrwulZ2IKjQvGQb1nELtKZF3m0TveGo","sessionid":"58499749216%3ALRy5B1Wa2uzpBg%3A10%3AAYdm3-kfVmL0p_NxsgexWV1juT55Y9f313z-StZMMw"} #amsterdam34158
+    e =  {"csrftoken":"TcG9x1PU6cW3g2GRvC3a8Kc41eu0486R","sessionid":"58499749216%3AklX0ckOg7Wm1ss%3A12%3AAYdLqlcl3SKx75zUvuKGgXqWbRGE1DaDEnVhT04oBg"}   #amsterdam34158 Amaan123
+    f =  {"csrftoken":"l0vLN7prPz5KPq7RwBTGy8vAIOQByMfb","sessionid":"58522898773%3AN5wL7m53WTTjUl%3A19%3AAYck-3vKUlLv4XdVQRxxcy7ZcsBlmrtSaQnPeGwAEg"} #farzi_kalosxyz  246800   
+    g =  {"csrftoken":"nucq7KZdCY84HsYwva7OrQtwWtLTkZY2","sessionid":"58522898773%3AWlQxnrvSjEPtXY%3A15%3AAYcncTeucKLPJRMOTvZW7CbRSFLsLr4Moj90WPfvNg"} #farzi_kalosxyz  246800   
+
+    c= [a,b,d,e,f,g]
     cookie_jar = random.choice(c)
     headers = {
             'user-agent': 'Mozilla/5.0 (Linux; Android 8.1.0; motorola one Build/OPKS28.63-18-3; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/70.0.3538.80 Mobile Safari/537.36 Instagram 72.0.0.21.98 Android (27/8.1.0; 320dpi; 720x1362; motorola; motorola one; deen_sprout; qcom; pt_BR; 132081645)'
