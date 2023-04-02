@@ -30,13 +30,13 @@ def home():
 # this returns 100 (square of 10)
 @application.route('/home', methods = ['GET'])
 def scrap_reels():
-    a = {"csrftoken":"aozTm225KYsVzGm4FXTnmNPmMBN1ptsc","sessionid":"58499749216%3ASBVvTqWPY1a1HY%3A22%3AAYexSKMidUcIJHv_FIOoXEMDrDgSFl-v8zQKJtA2Eg"}#amsterdam34158
+    a = {"csrftoken":"Q0jpWdF8kzRkg7qhngDuGlIhoRk2cMuQ","sessionid":"58499749216%3AJR8XySCNCQP5bi%3A16%3AAYd9zZPSsF6IpQQGk9ZGJcggLPqcYCBN7xiDW6gRFA"}#amsterdam34158  Amaan@123
     b =  {"csrftoken":"gj4sqlZEwd5b4Z8ueoHMkWPZhvPzWkrI","sessionid":"58522898773%3AmpatwYXqAlx9E2%3A5%3AAYfZTyUxsngK59Md6WSrAVwx9wpssaPQtzow3xp3yw"} #farzi_kalosxyz  246800
-    d =  {"csrftoken":"mfrwulZ2IKjQvGQb1nELtKZF3m0TveGo","sessionid":"58499749216%3ALRy5B1Wa2uzpBg%3A10%3AAYdm3-kfVmL0p_NxsgexWV1juT55Y9f313z-StZMMw"} #amsterdam34158
-    e =  {"csrftoken":"TcG9x1PU6cW3g2GRvC3a8Kc41eu0486R","sessionid":"58499749216%3AklX0ckOg7Wm1ss%3A12%3AAYdLqlcl3SKx75zUvuKGgXqWbRGE1DaDEnVhT04oBg"}   #amsterdam34158 Amaan123
+    d =  {"csrftoken":"dv7osDMXDhLX2lTOsbPPnQ4gBNDPsG3O","sessionid":"58499749216%3AnDhC7Z4zEP6AWi%3A17%3AAYeZCANvuq3KMl40YjQNMB_GLZS5VkIKpGmVO_BqtQ"} #amsterdam34158 Amaan@123
+    e =  {"csrftoken":"2LZbDPVRw8CVmREBbrvrYVbUPz6fFMCo","sessionid":"58522898773%3Apew23CUAfsoZlD%3A23%3AAYcu1Osx684xAtbepUEh5NMohJc1QEnqN6WlxZww_Q"}   #farzi_kalosxyz 246800
     f =  {"csrftoken":"l0vLN7prPz5KPq7RwBTGy8vAIOQByMfb","sessionid":"58522898773%3AN5wL7m53WTTjUl%3A19%3AAYck-3vKUlLv4XdVQRxxcy7ZcsBlmrtSaQnPeGwAEg"} #farzi_kalosxyz  246800   
     g =  {"csrftoken":"nucq7KZdCY84HsYwva7OrQtwWtLTkZY2","sessionid":"58522898773%3AWlQxnrvSjEPtXY%3A15%3AAYcncTeucKLPJRMOTvZW7CbRSFLsLr4Moj90WPfvNg"} #farzi_kalosxyz  246800   
-
+#a d
     c= [a,b,d,e,f,g]
     cookie_jar = random.choice(c)
     headers = {
