@@ -113,7 +113,7 @@ def scrap_reels():
         "uniqid":uniqid,
         "account": is_priv,
        }
-    elif target[:33] == "https://www.facebook.com/watch?v=" or target[:17] == "https://fb.watch/":
+    elif target[:33] == "https://www.facebook.com/watch?v=" or target[:17] == "https://fb.watch/" or target[:34] == "https://www.facebook.com/watch/?v=":
         ydl_opts = {}
         
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
