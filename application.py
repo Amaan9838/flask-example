@@ -62,7 +62,7 @@ def scrap_reels():
      meta = {
         "posts": user_id_req,
         }
-    elif target[:30] == "https://instagram.com/stories/" or target[-20:] == "?igshid=MDJmNzVkMjY=":
+    elif target[:30] == "https://instagram.com/stories/" and target[-20:] == "?igshid=MDJmNzVkMjY=":
       cut_story = target[30:-40]  
       user_id = requests.get(f"https://www.instagram.com/{cut_story}?__a=1&__d=dis",headers=headers, cookies=cookie_jar).json()
       is_priv = user_id['graphql']['user']['is_private']
@@ -78,9 +78,9 @@ def scrap_reels():
         "story": user_id_req,
         "uniqid":uniqid,
         "account": is_priv,
-       }    
-    elif target[:30] == "https://instagram.com/stories/" or target[-51:] == "?utm_source=ig_story_item_share&igshid=MDJmNzVkMjY=":
-      cut_story = target[30:-71]  
+       }  
+    elif target[:34] == "https://www.instagram.com/stories/" and target[-20:] == "?igshid=MDJmNzVkMjY=":
+      cut_story = target[30:-40]  
       user_id = requests.get(f"https://www.instagram.com/{cut_story}?__a=1&__d=dis",headers=headers, cookies=cookie_jar).json()
       is_priv = user_id['graphql']['user']['is_private']
       if is_priv == True:
@@ -95,7 +95,76 @@ def scrap_reels():
         "story": user_id_req,
         "uniqid":uniqid,
         "account": is_priv,
-       }           
+       }       
+    elif target[:34] == "https://www.instagram.com/stories/" and target[-19:] == "?igshid=MDJmNzVkMjY":
+      cut_story = target[34:-40]  
+      user_id = requests.get(f"https://www.instagram.com/{cut_story}?__a=1&__d=dis",headers=headers, cookies=cookie_jar).json()
+      is_priv = user_id['graphql']['user']['is_private']
+      if is_priv == True:
+         meta = {
+        "account": is_priv,
+       }
+      elif is_priv == False:
+       user_id = requests.get(f"https://www.instagram.com/stories/{cut_story}/?__a=1&__d=dis",headers=headers, cookies=cookie_jar).json()
+       uniqid = user_id['user']['id']
+       user_id_req = requests.get(f"https://www.instagram.com/api/v1/feed/reels_media/?reel_ids={uniqid}",headers=headers, cookies=cookie_jar).json()
+       meta = {
+        "story": user_id_req,
+        "uniqid":uniqid,
+        "account": is_priv,
+       }       
+    elif  target[:30] == "https://instagram.com/stories/" and target[-31:] == "?utm_source=ig_story_item_share":
+      cut_story = target[30:-51:] 
+      user_id = requests.get(f"https://www.instagram.com/{cut_story}?__a=1&__d=dis",headers=headers, cookies=cookie_jar).json()
+      is_priv = user_id['graphql']['user']['is_private']
+      if is_priv == True:
+         meta = {
+        "account": is_priv,
+       }
+      elif is_priv == False:
+         user_id = requests.get(f"https://www.instagram.com/stories/{cut_story}/?__a=1&__d=dis",headers=headers, cookies=cookie_jar).json()
+         uniqid = user_id['user']['id']
+         user_id_req = requests.get(f"https://www.instagram.com/api/v1/feed/reels_media/?reel_ids={uniqid}",headers=headers, cookies=cookie_jar).json()
+         meta = {
+         "story": user_id_req,
+         "uniqid":uniqid,
+         "account": is_priv,
+         
+         } 
+    elif  target[:30] == "https://instagram.com/stories/" and target[-32:] == "/?utm_source=ig_story_item_share":
+      cut_story = target[30:-52:]
+      user_id = requests.get(f"https://www.instagram.com/{cut_story}?__a=1&__d=dis",headers=headers, cookies=cookie_jar).json()
+      is_priv = user_id['graphql']['user']['is_private']
+      if is_priv == True:
+         meta = {
+        "account": is_priv,
+       }
+      elif is_priv == False:
+       user_id = requests.get(f"https://www.instagram.com/stories/{cut_story}/?__a=1&__d=dis",headers=headers, cookies=cookie_jar).json()
+       uniqid = user_id['user']['id']
+       user_id_req = requests.get(f"https://www.instagram.com/api/v1/feed/reels_media/?reel_ids={uniqid}",headers=headers, cookies=cookie_jar).json()
+       meta = {
+        "story": user_id_req,
+        "uniqid":uniqid,
+        "account": is_priv,
+       }
+    elif target[:34] == "https://www.instagram.com/stories/" and target[-32:] == "/?utm_source=ig_story_item_share"  :
+      cut_story = target[34:-52:]
+      user_id = requests.get(f"https://www.instagram.com/{cut_story}?__a=1&__d=dis",headers=headers, cookies=cookie_jar).json()
+      is_priv = user_id['graphql']['user']['is_private']
+      if is_priv == True:
+         meta = {
+        "account": is_priv,
+       }
+      elif is_priv == False:
+       user_id = requests.get(f"https://www.instagram.com/stories/{cut_story}/?__a=1&__d=dis",headers=headers, cookies=cookie_jar).json()
+       uniqid = user_id['user']['id']
+       user_id_req = requests.get(f"https://www.instagram.com/api/v1/feed/reels_media/?reel_ids={uniqid}",headers=headers, cookies=cookie_jar).json()
+       meta = {
+        "story": user_id_req,
+        "uniqid":uniqid,
+        "account": is_priv,
+       }                   
     elif target[:34] == "https://www.instagram.com/stories/":
       cut_story = target[34:-21]
       user_id = requests.get(f"https://www.instagram.com/{cut_story}?__a=1&__d=dis",headers=headers, cookies=cookie_jar).json()
