@@ -62,7 +62,7 @@ def scrap_reels():
      meta = {
         "posts": user_id_req,
         }
-    elif target[:30] == "https://instagram.com/stories/" and target[-20:] == "?igshid=MDJmNzVkMjY=":
+    elif target[:30] == "https://instagram.com/stories/" and target[-20:] == "?igshid=YmMyMTA2M2Y=":
       cut_story = target[30:-40]  
       user_id = requests.get(f"https://www.instagram.com/{cut_story}?__a=1&__d=dis",headers=headers, cookies=cookie_jar).json()
       is_priv = user_id['graphql']['user']['is_private']
@@ -79,7 +79,7 @@ def scrap_reels():
         "uniqid":uniqid,
         "account": is_priv,
        }  
-    elif target[:34] == "https://www.instagram.com/stories/" and target[-20:] == "?igshid=MDJmNzVkMjY=":
+    elif target[:34] == "https://www.instagram.com/stories/" and target[-20:] == "?igshid=YmMyMTA2M2Y=":
       cut_story = target[30:-40]  
       user_id = requests.get(f"https://www.instagram.com/{cut_story}?__a=1&__d=dis",headers=headers, cookies=cookie_jar).json()
       is_priv = user_id['graphql']['user']['is_private']
@@ -96,7 +96,7 @@ def scrap_reels():
         "uniqid":uniqid,
         "account": is_priv,
        }       
-    elif target[:34] == "https://www.instagram.com/stories/" and target[-19:] == "?igshid=MDJmNzVkMjY":
+    elif target[:34] == "https://www.instagram.com/stories/" and target[-19:] == "?igshid=YmMyMTA2M2Y=":
       cut_story = target[34:-40]  
       user_id = requests.get(f"https://www.instagram.com/{cut_story}?__a=1&__d=dis",headers=headers, cookies=cookie_jar).json()
       is_priv = user_id['graphql']['user']['is_private']
