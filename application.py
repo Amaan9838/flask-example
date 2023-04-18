@@ -252,7 +252,43 @@ def scrap_reels():
 
        return jsonify(meta)
 #http://127.0.0.1:5000/home?source=https://www.facebook.com/watch?v=1245895546280667
-
+@application.route('/story', methods = ['GET'])
+def reels():
+    a = {"csrftoken":"9zZx0NkkfikdC2VqOkXHR801Yl2U1Hkh","sessionid":"53168773914%3A1G2wzMulPT5S1n%3A5%3AAYeyCGyWh_N5kURqRFFhZCWnPuuJLavuK8mGtSDMww"}#rocky__8081  Ashar123
+    b =  {"csrftoken":"gj4sqlZEwd5b4Z8ueoHMkWPZhvPzWkrI","sessionid":"58522898773%3AmpatwYXqAlx9E2%3A5%3AAYfZTyUxsngK59Md6WSrAVwx9wpssaPQtzow3xp3yw"} #farzi_kalosxyz  246800
+    d =  {"csrftoken":"dv7osDMXDhLX2lTOsbPPnQ4gBNDPsG3O","sessionid":"58499749216%3AnDhC7Z4zEP6AWi%3A17%3AAYeZCANvuq3KMl40YjQNMB_GLZS5VkIKpGmVO_BqtQ"} #amsterdam34158 Amaan@123
+    e =  {"csrftoken":"2LZbDPVRw8CVmREBbrvrYVbUPz6fFMCo","sessionid":"58522898773%3Apew23CUAfsoZlD%3A23%3AAYcu1Osx684xAtbepUEh5NMohJc1QEnqN6WlxZww_Q"}   #farzi_kalosxyz 246800
+    f =  {"csrftoken":"l0vLN7prPz5KPq7RwBTGy8vAIOQByMfb","sessionid":"58522898773%3AN5wL7m53WTTjUl%3A19%3AAYck-3vKUlLv4XdVQRxxcy7ZcsBlmrtSaQnPeGwAEg"} #farzi_kalosxyz  246800   
+    g =  {"csrftoken":"nucq7KZdCY84HsYwva7OrQtwWtLTkZY2","sessionid":"58522898773%3AWlQxnrvSjEPtXY%3A15%3AAYcncTeucKLPJRMOTvZW7CbRSFLsLr4Moj90WPfvNg"} #farzi_kalosxyz  246800   
+#a d
+    c= [a]
+    cookie_jar = random.choice(c)
+    headers = {
+            'user-agent': 'Mozilla/5.0 (Linux; Android 8.1.0; motorola one Build/OPKS28.63-18-3; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/70.0.3538.80 Mobile Safari/537.36 Instagram 72.0.0.21.98 Android (27/8.1.0; 320dpi; 720x1362; motorola; motorola one; deen_sprout; qcom; pt_BR; 132081645)'
+         }
+    csrf_token = cookie_jar['csrftoken']
+    session_id = cookie_jar['sessionid']
+     
+    source = request.args['source'] 
+    target = format(source)
+    cut_story= target
+   
+    user_id = requests.get(f"https://www.instagram.com/{cut_story}?__a=1&__d=dis",headers=headers, cookies=cookie_jar).json()
+    is_priv = user_id['graphql']['user']['is_private']
+    if is_priv == True:
+      meta = {
+   "account": is_priv,
+   }
+    elif is_priv == False:
+     user_id = requests.get(f"https://www.instagram.com/stories/{cut_story}/?__a=1&__d=dis",headers=headers, cookies=cookie_jar).json()
+     uniqid = user_id['user']['id']
+     user_id_req = requests.get(f"https://www.instagram.com/api/v1/feed/reels_media/?reel_ids={uniqid}",headers=headers, cookies=cookie_jar).json()
+     meta = {
+   "story": user_id_req,
+   "uniqid":uniqid,
+   "account": is_priv,
+   }
+    return jsonify(meta)
 # driver function
 if __name__ == '__main__':
 
