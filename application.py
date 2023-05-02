@@ -1,7 +1,6 @@
 # Using flask to make an api
 # import necessary libraries and functions
 from flask import Flask, jsonify, request, url_for
-from pytube import YouTube
 import os
 import requests
 import json
@@ -329,22 +328,6 @@ def reels():
          "story": user_id_req,
          "uniqid":uniqid,
          "account": is_priv,
-         }
-    return jsonify(meta)
-@application.route('/stube', methods = ['GET'])
-def stube(): 
-    source = request.args['source'] 
-    target = format(source)
-    yt = YouTube(target)
-
-# Get the first stream
-    stream = yt.streams.first()
-
-# Get the signature ciphered URL
-    url = stream.url
-    meta = {
-         "story": url,
-
          }
     return jsonify(meta)
 # driver function
