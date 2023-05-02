@@ -5,11 +5,9 @@ import os
 import requests
 import json
 from datetime import datetime
-
+import requests
 import youtube_dl
 import random 
-import re
-import pytube
 # creating a Flask app
 application= Flask(__name__)
 
@@ -233,52 +231,6 @@ def scrap_reels():
         
         meta = {
             "ytdll": info,
-        }
-    elif target == "abc":
-        url = "https://www.youtube.com/watch?v=hEtFKTRCW_U"
-
-# set user-agent header to avoid HTTP 429 Too Many Requests error
-        headers = {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'}
-
-        # send an HTTP GET request to the video page
-        response = requests.get(url, headers=headers)
-
-        # extract the JavaScript code that contains the streaming data using a regular expression
-        stream_map_regex = r"ytInitialPlayerResponse\s*=\s*({.+?});"
-        stream_map_match = re.search(stream_map_regex, response.text)
-
-        if stream_map_match:
-            # parse the JavaScript code using the JSON library
-            stream_map_json = stream_map_match.group(1)
-            stream_map_data = json.loads(stream_map_json)
-
-            # extract the streaming data from the JSON data structure
-            streaming_data = stream_map_data.get("streamingData")
-
-            # extract the signature URL from the streaming data
-            signature_url = streaming_data["adaptiveFormats"][0]["signatureCipher"].split("&")[0][4:]
-            signature_url = signature_url.replace("%25", "%")
-
-            # get the video stream using PyTube library
-            video = pytube.YouTube(url)
-
-            # select the first stream available in the video stream list
-            stream = video.streams.first()
-
-            # update the signature URL of the selected stream with the extracted signature URL
-            stream.signature = signature_url
-            response = stream.url
-            # print the accessible video URL
-            # print(stream.url)
-            meta = {
-            "ytdll": response,
-        }
-           
-        else:
-         response = stream.url
-            # print("JavaScript code containing stream data not found in page source.")
-        meta = {
-            "ytdll": response,
         }
     else:
         cut = target[-11:]
