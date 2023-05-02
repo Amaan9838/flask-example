@@ -5,7 +5,7 @@ import os
 import requests
 import json
 from datetime import datetime
-import requests
+
 import youtube_dl
 import random 
 import re
