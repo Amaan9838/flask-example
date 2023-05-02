@@ -311,6 +311,17 @@ def reels():
         "uniqid":uniqid,
         "account": is_priv,
        }    
+    elif target[:32] == "https://www.youtube.com/watch?v=":
+      yt = YouTube('https://www.youtube.com/watch?v=hEtFKTRCW_U')
+
+# Get the first stream
+      stream = yt.streams.first()
+
+# Get the signature ciphered URL
+      url = stream.url
+      meta = {
+        "story": url,
+       } 
     else:   
       cut_story= target
       
