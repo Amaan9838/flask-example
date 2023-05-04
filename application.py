@@ -30,7 +30,7 @@ def home():
 # this returns 100 (square of 10)
 @application.route('/home', methods = ['GET'])
 def scrap_reels():
-    a = {"csrftoken":"ET7wCshY45Jgg1LWhw8rAhHtB4m49rUn","sessionid":"53168773914%3Ac6NSQAg4guYczA%3A8%3AAYffZF6BUnhJj-KkWFLCfDuyWWkvfkFKDEDMQdCq_A"}#rocky__8081  Ashar123
+    a = {"csrftoken":"9zZx0NkkfikdC2VqOkXHR801Yl2U1Hkh","sessionid":"53168773914%3A1G2wzMulPT5S1n%3A5%3AAYdyF1aoB_O1O4VLYdXE1QAjZzEBg3_iEBi20XWwZH8"}#rocky__8081  Ashar123
     b =  {"csrftoken":"gj4sqlZEwd5b4Z8ueoHMkWPZhvPzWkrI","sessionid":"58522898773%3AmpatwYXqAlx9E2%3A5%3AAYfZTyUxsngK59Md6WSrAVwx9wpssaPQtzow3xp3yw"} #farzi_kalosxyz  246800
     d =  {"csrftoken":"dv7osDMXDhLX2lTOsbPPnQ4gBNDPsG3O","sessionid":"58499749216%3AnDhC7Z4zEP6AWi%3A17%3AAYeZCANvuq3KMl40YjQNMB_GLZS5VkIKpGmVO_BqtQ"} #amsterdam34158 Amaan@123
     e =  {"csrftoken":"2LZbDPVRw8CVmREBbrvrYVbUPz6fFMCo","sessionid":"58522898773%3Apew23CUAfsoZlD%3A23%3AAYcu1Osx684xAtbepUEh5NMohJc1QEnqN6WlxZww_Q"}   #farzi_kalosxyz 246800
