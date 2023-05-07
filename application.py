@@ -72,7 +72,8 @@ def scrap_reels():
 
      user_id_req = requests.get(f"https://www.instagram.com/p/{cut_reel}/?__a=1&__d=dis",headers=headers, cookies=cookie_jar, proxies=proxyDict).json()
      meta = {
-              "posts": user_id_req
+              "posts": user_id_req,
+              "cookie_jar": cookie_jar
            }      
     elif target[:28] == "https://www.instagram.com/p/":
      cut_post = target[28:39]
