@@ -30,26 +30,46 @@ def home():
 # this returns 100 (square of 10)
 @application.route('/home', methods = ['GET'])
 def scrap_reels():
-    http_1 = "185.199.228.220:7300:xlqlutuh:g64kgmh8afoh"
-    ht2 = "185.199.229.156:7492:xlqlutuh:g64kgmh8afoh"
-   #  ht3 = "185.199.231.45:8382:xlqlutuh:g64kgmh8afoh"
-   #  ht4 = "188.74.210.207:6286:xlqlutuh:g64kgmh8afoh"
-   #  ht5 = "188.74.183.10:8279:xlqlutuh:g64kgmh8afoh"
-   #  ht6 = "188.74.210.21:6100:xlqlutuh:g64kgmh8afoh"
-   #  ht7 = "45.155.68.129:8133:xlqlutuh:g64kgmh8afoh"
-   #  ht8 = "154.95.36.199:6893:xlqlutuh:g64kgmh8afoh"
-   #  ht9 = "45.94.47.66:8110:xlqlutuh:g64kgmh8afoh"
-    inp = open("proxy_list.txt", "r")
-    lines=inp.read().split("\n")
+   #  http_1 = "185.199.228.220:7300:xlqlutuh:g64kgmh8afoh"
+   #  ht2 = "185.199.229.156:7492:xlqlutuh:g64kgmh8afoh"
+   # #  ht3 = "185.199.231.45:8382:xlqlutuh:g64kgmh8afoh"
+   # #  ht4 = "188.74.210.207:6286:xlqlutuh:g64kgmh8afoh"
+   # #  ht5 = "188.74.183.10:8279:xlqlutuh:g64kgmh8afoh"
+   # #  ht6 = "188.74.210.21:6100:xlqlutuh:g64kgmh8afoh"
+   # #  ht7 = "45.155.68.129:8133:xlqlutuh:g64kgmh8afoh"
+   # #  ht8 = "154.95.36.199:6893:xlqlutuh:g64kgmh8afoh"
+   # #  ht9 = "45.94.47.66:8110:xlqlutuh:g64kgmh8afoh"
+   #  inp = open("proxy_list.txt", "r")
+   #  lines=inp.read().split("\n")
     
-    http_proxy = random.choice(lines)
-   #  http_proxy = "154.95.36.199:6893:xlqlutuh:g64kgmh8afoh"
+   #  http_proxy = random.choice(lines)
+   # #  http_proxy = "154.95.36.199:6893:xlqlutuh:g64kgmh8afoh"
     
-    url = "https://ipv4.icanhazip.com"
+   #  url = "https://ipv4.icanhazip.com"
 
-    proxyDict = {
-      "http": http_proxy,  
-    }
+   #  proxyDict = {
+   #    "http": http_proxy,  
+   #  }
+    proxies = (  
+    'http://xlqlutuh:g64kgmh8afoh@185.199.229.156:7492',
+    'http://xlqlutuh:g64kgmh8afoh@185.199.228.220:7300',
+    'http://xlqlutuh:g64kgmh8afoh@185.199.231.45:8382',
+    'http://xlqlutuh:g64kgmh8afoh@188.74.210.207:6286',
+    'http://xlqlutuh:g64kgmh8afoh@188.74.183.10:8279',
+    'http://xlqlutuh:g64kgmh8afoh@188.74.210.21:6100',
+    'http://xlqlutuh:g64kgmh8afoh@45.155.68.129:8133',
+    'http://xlqlutuh:g64kgmh8afoh@154.95.36.199:6893',
+    'http://xlqlutuh:g64kgmh8afoh@45.94.47.66:8110'
+
+    )
+# length = len(proxies)
+# n = length * 2 
+# for i in range(n):
+#     index = i % length
+    pr_oxy = [0,1,2,3,4,5,6,7,8]
+    index = random.choice(pr_oxy)
+    print(index)
+    proxyDict = {"http" : proxies[index], "https" : proxies[index]}
     a = {"csrftoken":"ehvnfz5RZnuVTUNOaUcX4K8YzMjrMgQZ","sessionid":"53168773914%3AcdCaV6FhUUTh2f%3A17%3AAYdmqmmJjaPxPWud9nJYFaRiMZiziCdO85vj08Tacw"}#rocky__8081  Ashar123
     b =  {"csrftoken":"1jwyJ5QczmCIva5ROe2OOj8opDwazXL3","sessionid":"36744979802%3AmISFYgnEY22rzr%3A20%3AAYc4E5uksgDF77ikhfeHkkTbGplkf92-acsJYzzptQ"} #farzi_kalosxyz  246800
     d =  {"csrftoken":"dv7osDMXDhLX2lTOsbPPnQ4gBNDPsG3O","sessionid":"58499749216%3AnDhC7Z4zEP6AWi%3A17%3AAYeZCANvuq3KMl40YjQNMB_GLZS5VkIKpGmVO_BqtQ"} #amsterdam34158 Amaan@123
@@ -57,7 +77,7 @@ def scrap_reels():
     f =  {"csrftoken":"yG0qeT6AdwIO2gUFLGSjvtYFYxhwA8eO","sessionid":"53168773914%3AiTndpEqqT0utPz%3A26%3AAYfZvE4oVH6l2zLFObt5svVqXXKFFJoAVk0uZ0pFjg"} #rocky__8081  Ashar123   
     g =  {"csrftoken":"0KDtcmLuS6S5piO0dJkTLZd5J8SAb8o3","sessionid":"53168773914%3Ag8rfaOhrydC3XF%3A3%3AAYc2B6nN_8PwOUgla2ZxAwGyYhnLXypui8fyQtXpbQ"} #rocky__8081  Ashar123   
 #a d
-    c= [a,g,e,f]
+    c= [a,e,f,g]
     cookie_jar = random.choice(c)
     headers = {
             'user-agent': 'Mozilla/5.0 (Linux; Android 8.1.0; motorola one Build/OPKS28.63-18-3; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/70.0.3538.80 Mobile Safari/537.36 Instagram 72.0.0.21.98 Android (27/8.1.0; 320dpi; 720x1362; motorola; motorola one; deen_sprout; qcom; pt_BR; 132081645)'
@@ -73,7 +93,8 @@ def scrap_reels():
      user_id_req = requests.get(f"https://www.instagram.com/p/{cut_reel}/?__a=1&__d=dis",headers=headers, cookies=cookie_jar, proxies=proxyDict).json()
      meta = {
               "posts": user_id_req,
-              "cookie_jar": cookie_jar
+              "cookie_jar":cookie_jar,
+              "ip": proxyDict
            }      
     elif target[:28] == "https://www.instagram.com/p/":
      cut_post = target[28:39]
@@ -282,7 +303,7 @@ def reels():
     f =  {"csrftoken":"yG0qeT6AdwIO2gUFLGSjvtYFYxhwA8eO","sessionid":"53168773914%3AiTndpEqqT0utPz%3A26%3AAYfZvE4oVH6l2zLFObt5svVqXXKFFJoAVk0uZ0pFjg"} #farzi_kalosxyz  246800   
     g =  {"csrftoken":"0KDtcmLuS6S5piO0dJkTLZd5J8SAb8o3","sessionid":"53168773914%3Ag8rfaOhrydC3XF%3A3%3AAYc2B6nN_8PwOUgla2ZxAwGyYhnLXypui8fyQtXpbQ"} #farzi_kalosxyz  246800   
 #a d
-    c= [a,e,f,g]
+    c= [a]
     cookie_jar = random.choice(c)
     headers = {
             'user-agent': 'Mozilla/5.0 (Linux; Android 8.1.0; motorola one Build/OPKS28.63-18-3; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/70.0.3538.80 Mobile Safari/537.36 Instagram 72.0.0.21.98 Android (27/8.1.0; 320dpi; 720x1362; motorola; motorola one; deen_sprout; qcom; pt_BR; 132081645)'
