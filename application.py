@@ -20,7 +20,7 @@ application= Flask(__name__)
 def home():
 	if(request.method == 'GET'):
 
-		data = "hello Brother"
+		data = "hello world"
 		return jsonify({'data': data})
 
 
@@ -80,7 +80,8 @@ def scrap_reels():
     c= [a,e,f,g]
     cookie_jar = random.choice(c)
     headers = {
-            'user-agent': 'Mozilla/5.0 (Linux; Android 8.1.0; motorola one Build/OPKS28.63-18-3; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/70.0.3538.80 Mobile Safari/537.36 Instagram 72.0.0.21.98 Android (27/8.1.0; 320dpi; 720x1362; motorola; motorola one; deen_sprout; qcom; pt_BR; 132081645)'
+            'user-agent': 'Mozilla/5.0 (Linux; Android 8.1.0; motorola one Build/OPKS28.63-18-3; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/70.0.3538.80 Mobile Safari/537.36 Instagram 72.0.0.21.98 Android (27/8.1.0; 320dpi; 720x1362; motorola; motorola one; deen_sprout; qcom; pt_BR; 132081645)',
+
          }
     csrf_token = cookie_jar['csrftoken']
     session_id = cookie_jar['sessionid']
@@ -303,7 +304,22 @@ def reels():
     f =  {"csrftoken":"yG0qeT6AdwIO2gUFLGSjvtYFYxhwA8eO","sessionid":"53168773914%3AiTndpEqqT0utPz%3A26%3AAYfZvE4oVH6l2zLFObt5svVqXXKFFJoAVk0uZ0pFjg"} #farzi_kalosxyz  246800   
     g =  {"csrftoken":"0KDtcmLuS6S5piO0dJkTLZd5J8SAb8o3","sessionid":"53168773914%3Ag8rfaOhrydC3XF%3A3%3AAYc2B6nN_8PwOUgla2ZxAwGyYhnLXypui8fyQtXpbQ"} #farzi_kalosxyz  246800   
 #a d
-    c= [a]
+   #  proxies = (  
+   #  'http://xlqlutuh:g64kgmh8afoh@185.199.229.156:7492',
+   #  'http://xlqlutuh:g64kgmh8afoh@185.199.228.220:7300',
+   #  'http://xlqlutuh:g64kgmh8afoh@185.199.231.45:8382',
+   #  'http://xlqlutuh:g64kgmh8afoh@188.74.210.207:6286',
+   #  'http://xlqlutuh:g64kgmh8afoh@188.74.183.10:8279',
+   #  'http://xlqlutuh:g64kgmh8afoh@188.74.210.21:6100',
+   #  'http://xlqlutuh:g64kgmh8afoh@45.155.68.129:8133',
+   #  'http://xlqlutuh:g64kgmh8afoh@154.95.36.199:6893',
+   #  'http://xlqlutuh:g64kgmh8afoh@45.94.47.66:8110'
+
+   #  )
+   #  pr_oxy = [0,1,2,3,4,5,6,7,8]
+   #  index = random.choice(pr_oxy)
+   #  proxyDict = {"http" : proxies[index], "https" : proxies[index]}
+    c= [a,e,f,g]
     cookie_jar = random.choice(c)
     headers = {
             'user-agent': 'Mozilla/5.0 (Linux; Android 8.1.0; motorola one Build/OPKS28.63-18-3; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/70.0.3538.80 Mobile Safari/537.36 Instagram 72.0.0.21.98 Android (27/8.1.0; 320dpi; 720x1362; motorola; motorola one; deen_sprout; qcom; pt_BR; 132081645)'
@@ -318,16 +334,16 @@ def reels():
       separator = '/'
 
       cut_story = cut_s.split(separator, 1)[0]  
-      user_id = requests.get(f"https://www.instagram.com/{cut_story}?__a=1&__d=dis",headers=headers, cookies=cookie_jar, proxies=proxyDict).json()
+      user_id = requests.get(f"https://www.instagram.com/{cut_story}?__a=1&__d=dis",headers=headers, cookies=cookie_jar).json()
       is_priv = user_id['graphql']['user']['is_private']
       if is_priv == True:
          meta = {
         "account": is_priv,
        }
       elif is_priv == False:
-       user_id = requests.get(f"https://www.instagram.com/stories/{cut_story}/?__a=1&__d=dis",headers=headers, cookies=cookie_jar, proxies=proxyDict).json()
+       user_id = requests.get(f"https://www.instagram.com/stories/{cut_story}/?__a=1&__d=dis",headers=headers, cookies=cookie_jar).json()
        uniqid = user_id['user']['id']
-       user_id_req = requests.get(f"https://www.instagram.com/api/v1/feed/reels_media/?reel_ids={uniqid}",headers=headers, cookies=cookie_jar, proxies=proxyDict).json()
+       user_id_req = requests.get(f"https://www.instagram.com/api/v1/feed/reels_media/?reel_ids={uniqid}",headers=headers, cookies=cookie_jar).json()
        meta = {
         "story": user_id_req,
         "uniqid":uniqid,
@@ -338,40 +354,60 @@ def reels():
       separator = '/'
 
       cut_story = cut_s.split(separator, 1)[0]  
-      user_id = requests.get(f"https://www.instagram.com/{cut_story}?__a=1&__d=dis",headers=headers, cookies=cookie_jar, proxies=proxyDict).json()
+      user_id = requests.get(f"https://www.instagram.com/{cut_story}?__a=1&__d=dis",headers=headers, cookies=cookie_jar).json()
       is_priv = user_id['graphql']['user']['is_private']
       if is_priv == True:
          meta = {
         "account": is_priv,
        }
       elif is_priv == False:
-       user_id = requests.get(f"https://www.instagram.com/stories/{cut_story}/?__a=1&__d=dis",headers=headers, cookies=cookie_jar, proxies=proxyDict).json()
+       user_id = requests.get(f"https://www.instagram.com/stories/{cut_story}/?__a=1&__d=dis",headers=headers, cookies=cookie_jar).json()
        uniqid = user_id['user']['id']
-       user_id_req = requests.get(f"https://www.instagram.com/api/v1/feed/reels_media/?reel_ids={uniqid}",headers=headers, cookies=cookie_jar, proxies=proxyDict).json()
+       user_id_req = requests.get(f"https://www.instagram.com/api/v1/feed/reels_media/?reel_ids={uniqid}",headers=headers, cookies=cookie_jar).json()
        meta = {
         "story": user_id_req,
         "uniqid":uniqid,
         "account": is_priv,
        }    
+    elif target[:32] == "https://www.youtube.com/watch?v=" or target[:31] == "https://www.youtube.com/shorts/" or target[:27] == "https://youtube.com/shorts/" or target[:17] == "https://youtu.be/":
+         url = "https://youtube-search-and-download.p.rapidapi.com/video"
+         cut = target[-11:]
+         querystring = {"id": cut}
+
+         headers = {
+         "X-RapidAPI-Key": "6e7e0e613dmsh7da1932734a8a9ap14bcb6jsn4c51c4a9f466",
+         "X-RapidAPI-Host": "youtube-search-and-download.p.rapidapi.com"
+      }
+
+         response = requests.get(url, headers=headers, params=querystring)
+         meta = {
+            "youtube": response
+         }
     else:   
       cut_story= target
       
-      user_id = requests.get(f"https://www.instagram.com/{cut_story}?__a=1&__d=dis",headers=headers, cookies=cookie_jar, proxies=proxyDict).json()
+      user_id = requests.get(f"https://www.instagram.com/{cut_story}?__a=1&__d=dis",headers=headers, cookies=cookie_jar).json()
       is_priv = user_id['graphql']['user']['is_private']
       if is_priv == True:
          meta = {
       "account": is_priv,
       }
       elif is_priv == False:
-         user_id = requests.get(f"https://www.instagram.com/stories/{cut_story}/?__a=1&__d=dis",headers=headers, cookies=cookie_jar, proxies=proxyDict).json()
+         user_id = requests.get(f"https://www.instagram.com/stories/{cut_story}/?__a=1&__d=dis",headers=headers, cookies=cookie_jar).json()
          uniqid = user_id['user']['id']
-         user_id_req = requests.get(f"https://www.instagram.com/api/v1/feed/reels_media/?reel_ids={uniqid}",headers=headers, cookies=cookie_jar, proxies=proxyDict).json()
+         user_id_req = requests.get(f"https://www.instagram.com/api/v1/feed/reels_media/?reel_ids={uniqid}",headers=headers, cookies=cookie_jar).json()
          meta = {
          "story": user_id_req,
          "uniqid":uniqid,
          "account": is_priv,
          }
-    return jsonify(meta)
+    if target[:32] == "https://www.youtube.com/watch?v=" or target[:31] == "https://www.youtube.com/shorts/" or target[:27] == "https://youtube.com/shorts/" or target[:17] == "https://youtu.be/":
+       
+       return (response.json())
+        
+    else:
+
+       return jsonify(meta)
 # driver function
 if __name__ == '__main__':
 
