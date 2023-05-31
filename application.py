@@ -70,14 +70,14 @@ def scrap_reels():
     index = random.choice(pr_oxy)
     print(index)
     proxyDict = {"http" : proxies[index], "https" : proxies[index]}
-    a = {"csrftoken":"WHeDVmiW1BUNfI3rnfcFNScaDYRhyIBx","sessionid":"53168773914%3AarQgFzkPj248d1%3A9%3AAYfnYiTXzLEkCcPNdZoosyvVms2DVY58DjcOaKDWXw"}#rocky__8081  Ashar123
+    a = {"csrftoken":"9zZx0NkkfikdC2VqOkXHR801Yl2U1Hkh","sessionid":"53168773914%3A1G2wzMulPT5S1n%3A5%3AAYchXc_6qOkoEkoO-aK7-1FCWh2VR7o6IcJHZ0Ld81c"}#rocky__8081  Ashar123
     b =  {"csrftoken":"1jwyJ5QczmCIva5ROe2OOj8opDwazXL3","sessionid":"36744979802%3AmISFYgnEY22rzr%3A20%3AAYc4E5uksgDF77ikhfeHkkTbGplkf92-acsJYzzptQ"} #farzi_kalosxyz  246800
     d =  {"csrftoken":"dv7osDMXDhLX2lTOsbPPnQ4gBNDPsG3O","sessionid":"58499749216%3AnDhC7Z4zEP6AWi%3A17%3AAYeZCANvuq3KMl40YjQNMB_GLZS5VkIKpGmVO_BqtQ"} #amsterdam34158 Amaan@123
     e =  {"csrftoken":"3nKfn2qBQKRFHJNFw0AfG8Rfdb9o33jQ","sessionid":"53168773914%3AZiRqQaVRRDkGVm%3A14%3AAYe0yPbgq6hXRQEUZg0UFwp0QjS2OpOSCcrdLbRRGg"}   #rocky__8081  Ashar123
     f =  {"csrftoken":"BpYbMrkXYht3ECBFXkHOwtKmhFJglbKM","sessionid":"53168773914%3AdeYBC2nzIso7Ri%3A19%3AAYcrpsd6aywjewsCwazpEgfwL_W2w7yXfDbjRXf4PA"} #rocky__8081  Ashar123   
     g =  {"csrftoken":"Sl3Ibj3cTVK67mQW97gjaGEKhAAWFzJR","sessionid":"53168773914%3AYKdJ9vfDqszBpO%3A13%3AAYcj_vbdwZgbiNYlEY3DhEkm2oshzhDZ9jOXEKQbdw"} #rocky__8081  Ashar123   
 #a d
-    c= [a,e,f,g]
+    c= [a,e]
    #  c= [a]
 
     cookie_jar = random.choice(c)
