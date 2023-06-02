@@ -432,9 +432,9 @@ def youtube():
    streams1 = video.streams.all()
    duration = video.length
    title = video.title
-   print(streams1)
+   # print(streams1)
 
-   print(title)
+   # print(title)
 
    streams_720p = video.streams.filter(progressive=True,res='720p',audio_codec="mp4a.40.2").first().url
    streams_720p_download = video.streams.filter(progressive=True,res='720p',audio_codec="mp4a.40.2").first()
@@ -453,12 +453,12 @@ def youtube():
    streams_audio = video.streams.filter(progressive=False,mime_type='audio/mp4')
 
 
-   print(streams_audio.first().url)
+   # print(streams_audio.first().url)
 
-   print(streams_2160p_mp4.first())
-   # streams_720p_download.download(filename='test_vid4.mp4')
-   print(streams_1440p_mp4)
-   print(streams_1080p_mp4)
+   # print(streams_2160p_mp4.first())
+   # # streams_720p_download.download(filename='test_vid4.mp4')
+   # print(streams_1440p_mp4)
+   # print(streams_1080p_mp4)
 
    # preffered_resolution = ['144p', '240p', '360p', '480p', '720p', '1080p','1440p','2160p']
    # for resolution in preffered_resolution: 
