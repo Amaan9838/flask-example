@@ -481,7 +481,7 @@ def reels():
             },
                 'title': title,
                 }
-            return jsonify(meta)  
+            # return jsonify(meta)  
         elif len(streams_1080p_mp4) > 0 :
             meta = {
                 'adaptive_formats_mp4':{  
@@ -535,7 +535,7 @@ def reels():
             },
                 'title': title,
                 }
-        return jsonify(meta)     
+      #   return jsonify(meta)     
     elif  len(streams_720p_mp4) > 0:
         meta = {
             'adaptive_formats_mp4':{  
@@ -586,7 +586,7 @@ def reels():
         },
             'title': title,
             }
-        return jsonify(meta)       
+      #   return jsonify(meta)       
     elif len(streams_480p_mp4) > 0:
         meta = {
             'adaptive_formats_mp4':{  
@@ -631,7 +631,7 @@ def reels():
             'title': title,
             }    
 
-        return jsonify(meta)   
+      #   return jsonify(meta)   
     elif len(streams_360p_mp4) > 0:
       meta = {
          'adaptive_formats_mp4':{  
@@ -671,7 +671,7 @@ def reels():
          'title': title,
          }    
 
-      return jsonify(meta)
+      # return jsonify(meta)
     else:   
       cut_story= target
       
