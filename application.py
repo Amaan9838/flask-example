@@ -425,61 +425,61 @@ def reels():
                         "quality": "2160p",
                         "mime_type": "video/mp4",
                         "url": streams_2160p_mp4.first().url,       
-                }, 
+                  }, 
                     "1":{
                         "quality": "1440p",
                         "mime_type": "video/mp4",
                         "url": streams_1440p_mp4.first().url,       
-                },
+                  },
                     "2":{
                         "quality": "1080p",
                         "mime_type": "video/mp4",
                         "url": streams_1080p_mp4.first().url,       
-                },
-                "3":{
+                  },
+                     "3":{
                         "quality": "720p",
                         "mime_type": "video/mp4",
                         "url": streams_720p_mp4.first().url,  
-                },
+                  },
                     "4":{
                         "quality": "480p",
                         "mime_type": "video/mp4",
                         "url": streams_480p_mp4.url,
-                    },
+                  },
                     "5":{
                         "quality": "360p",
                         "mime_type": "video/mp4",
                         "url": streams_360p_mp4.url,
-                    },
+                  },
                     "6":{
                         "quality": "240p",
                         "mime_type": "video/mp4",
                         "url": streams_240p_mp4.url,
-                    },
+                  },
                     "7":{
                         "quality": "144p",
                         "mime_type": "video/mp4",
                         "url": streams_144p_mp4.url,
-                    },
+                  },
                 },
-                    "formats":{
-                "22":{
-                    "quality": "720p",
-                    "mime_type": "video/mp4",
-                    "url": streams_720p,     
+                  "formats":{
+                     "22":{
+                        "quality": "720p",
+                        "mime_type": "video/mp4",
+                        "url": streams_720p,     
+                  },
+                     "18":{
+                        "quality": "360p",
+                        "mime_type": "video/mp4",
+                        "url": streams_360p,        
+                  },
+                     "17":{
+                        "quality": "144p",
+                        "mime_type": "video/mp4",
+                        "url": streams_144p,     
+                  },
             },
-            "18":{
-                    "quality": "360p",
-                    "mime_type": "video/mp4",
-                    "url": streams_360p,        
-            },
-            "17":{
-                    "quality": "144p",
-                    "mime_type": "video/mp4",
-                    "url": streams_144p,     
-            },
-            },
-                "title": title,
+                     "title": title,
                 }
             # return jsonify(meta)  
       elif len(streams_1080p_mp4) > 0 :
@@ -489,186 +489,185 @@ def reels():
                         "quality": "1080p",
                         "mime_type": "video/mp4",
                         "url": streams_1080p_mp4.first().url,       
-                },
-                "1":{
+                  },
+                     "1":{
                         "quality": "720p",
                         "mime_type": "video/mp4",
                         "url": streams_720p_mp4.first().url,  
-                },
-                    "2":{
+                  },
+                     "2":{
                         "quality": "480p",
                         "mime_type": "video/mp4",
                         "url": streams_480p_mp4.url,
-                    },
-                    "3":{
+                  },
+                     "3":{
                         "quality": "360p",
                         "mime_type": "video/mp4",
                         "url": streams_360p_mp4.url,
-                    },
-                    "4":{
+                  },
+                     "4":{
                         "quality": "240p",
                         "mime_type": "video/mp4",
                         "url": streams_240p_mp4.url,
-                    },
-                    "5":{
+                  },
+                     "5":{
                         "quality": "144p",
                         "mime_type": "video/mp4",
                         "url": streams_144p_mp4.url,
-                    },
+                  },
                 },
-                    "formats":{
-                "22":{
-                    "quality": "720p",
-                    "mime_type": "video/mp4",
-                    "url": streams_720p,     
-            },
-            "18":{
-                    "quality": "360p",
-                    "mime_type": "video/mp4",
-                    "url": streams_360p,        
-            },
-            "17":{
-                    "quality": "144p",
-                    "mime_type": "video/mp4",
-                    "url": streams_144p,     
-            },
-            },
-                "title": title,
+                  "formats":{
+                     "22":{
+                        "quality": "720p",
+                        "mime_type": "video/mp4",
+                        "url": streams_720p,     
+                  },
+                     "18":{
+                        "quality": "360p",
+                        "mime_type": "video/mp4",
+                        "url": streams_360p,        
+                  },
+                     "17":{
+                        "quality": "144p",
+                        "mime_type": "video/mp4",
+                        "url": streams_144p,     
+                  },
+               },
+                     "title": title,
                 }
       #   return jsonify(meta)     
       elif  len(streams_720p_mp4) > 0:
             meta = {
             "adaptive_formats_mp4":{  
-            "0":{
+                  "0":{
                     "quality": "720p",
                     "mime_type": "video/mp4",
                     "url": streams_720p_mp4.first().url,  
-            },
-                "1":{
+               },
+                  "1":{
                     "quality": "480p",
                     "mime_type": "video/mp4",
                     "url": streams_480p_mp4.url,
-                },
-                "2":{
+               },
+                  "2":{
                     "quality": "360p",
                     "mime_type": "video/mp4",
                     "url": streams_360p_mp4.url,
-                },
-                "3":{
+               },
+                  "3":{
                     "quality": "240p",
                     "mime_type": "video/mp4",
                     "url": streams_240p_mp4.url,
-                },
-                "4":{
+               },
+                  "4":{
                     "quality": "144p",
                     "mime_type": "video/mp4",
                     "url": streams_144p_mp4.url,
-                },
+               },
             },
-            "formats":{
-            "22":{
-                "quality": "720p",
-                "mime_type": "video/mp4",
-                "url": streams_720p,
-                
-        },
-        "18":{
-                "quality": "360p",
-                "mime_type": "video/mp4",
-                "url": streams_360p,
-                
-        },
-        "17":{
-                "quality": "144p",
-                "mime_type": "video/mp4",
-                "url": streams_144p,   
-        },
-        },
-            "title": title,
+               "formats":{
+                  "22":{
+                     "quality": "720p",
+                     "mime_type": "video/mp4",
+                     "url": streams_720p,
+                     
+               },
+                  "18":{
+                     "quality": "360p",
+                     "mime_type": "video/mp4",
+                     "url": streams_360p,        
+               },
+                  "17":{
+                     "quality": "144p",
+                     "mime_type": "video/mp4",
+                     "url": streams_144p,   
+               },
+            },
+                  "title": title,
             }
       #   return jsonify(meta)       
       elif len(streams_480p_mp4) > 0:
             meta = {
             "adaptive_formats_mp4":{  
-                "0":{
+                  "0":{
                     "quality": "480p",
                     "mime_type": "video/mp4",
                     "url": streams_480p_mp4.url,
-                },
-                "1":{
+               },
+                  "1":{
                     "quality": "360p",
                     "mime_type": "video/mp4",
                     "url": streams_360p_mp4.url,
-                },
-                "2":{
+               },
+                  "2":{
                     "quality": "240p",
                     "mime_type": "video/mp4",
                     "url": streams_240p_mp4.url,
-                },
-                "3":{
+               },
+                  "3":{
                     "quality": "144p",
                     "mime_type": "video/mp4",
                     "url": streams_144p_mp4.url,
-                },
+               },
             },
-            "formats":{
-            "22":{
-                "quality": "720p",
-                "mime_type": "video/mp4",
-                "url": streams_720p,       
-        },
-        "18":{
-                "quality": "360p",
-                "mime_type": "video/mp4",
-                "url": streams_360p,      
-        },
-        "17":{
-                "quality": "144p",
-                "mime_type": "video/mp4",
-                "url": streams_144p,   
-        },
-        },
-            "title": title,
+               "formats":{
+                  "22":{
+                     "quality": "720p",
+                     "mime_type": "video/mp4",
+                     "url": streams_720p,       
+               },
+                  "18":{
+                     "quality": "360p",
+                     "mime_type": "video/mp4",
+                     "url": streams_360p,      
+               },
+                  "17":{
+                     "quality": "144p",
+                     "mime_type": "video/mp4",
+                     "url": streams_144p,   
+               },
+            },
+                  "title": title,
             }    
 
       #   return jsonify(meta)   
       elif len(streams_360p_mp4) > 0:
             meta = {
-         "adaptive_formats_mp4":{  
-               "0":{
-                  "quality": "360p",
-                  "mime_type": "video/mp4",
-                  "url": streams_360p_mp4.url,
+            "adaptive_formats_mp4":{  
+                  "0":{
+                     "quality": "360p",
+                     "mime_type": "video/mp4",
+                     "url": streams_360p_mp4.url,
                },
-               "1":{
-                  "quality": "240p",
-                  "mime_type": "video/mp4",
-                  "url": streams_240p_mp4.url,
+                  "1":{
+                     "quality": "240p",
+                     "mime_type": "video/mp4",
+                     "url": streams_240p_mp4.url,
                },
-               "2":{
-                  "quality": "144p",
-                  "mime_type": "video/mp4",
-                  "url": streams_144p_mp4.url,
+                  "2":{
+                     "quality": "144p",
+                     "mime_type": "video/mp4",
+                     "url": streams_144p_mp4.url,
                },
-         },
-         "formats":{
-         "22":{
-               "quality": "720p",
-               "mime_type": "video/mp4",
-               "url": streams_720p,       
-      },
-      "18":{
-               "quality": "360p",
-               "mime_type": "video/mp4",
-               "url": streams_360p,      
-      },
-      "17":{
-               "quality": "144p",
-               "mime_type": "video/mp4",
-               "url": streams_144p,   
-      },
-      },
-         "title": title,
+            },
+               "formats":{
+                  "22":{
+                     "quality": "720p",
+                     "mime_type": "video/mp4",
+                     "url": streams_720p,       
+               },
+                  "18":{
+                     "quality": "360p",
+                     "mime_type": "video/mp4",
+                     "url": streams_360p,      
+               },
+                  "17":{
+                     "quality": "144p",
+                     "mime_type": "video/mp4",
+                     "url": streams_144p,   
+               },
+            },
+               "title": title,
          }    
 
       # return jsonify(meta)
