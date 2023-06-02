@@ -526,7 +526,7 @@ def youtube():
       },
          'title': title,
          }
-      return meta  
+      return (meta)  
    elif len(streams_1080p_mp4) > 0 :
       meta = {
          'adaptive_formats_mp4':{  
@@ -580,7 +580,7 @@ def youtube():
       },
          'title': title,
          }
-      return meta   
+      return (meta)   
    elif  len(streams_720p_mp4) > 0:
       meta = {
          'adaptive_formats_mp4':{  
@@ -631,7 +631,7 @@ def youtube():
       },
          'title': title,
          }
-      return meta      
+      return (meta)      
    elif len(streams_480p_mp4) > 0:
       meta = {
          'adaptive_formats_mp4':{  
@@ -676,7 +676,7 @@ def youtube():
          'title': title,
          }    
 
-      return meta 
+      return (meta) 
    elif len(streams_360p_mp4) > 0:
       meta = {
          'adaptive_formats_mp4':{  
@@ -716,9 +716,9 @@ def youtube():
          'title': title,
          }    
 
-      return meta         
-   else:
-      return "streams are not supported" 
+      return (meta)         
+   # else:
+   #    return "streams are not supported" 
 if __name__ == '__main__':
 
 	application.run(debug = True)
