@@ -280,22 +280,22 @@ def scrap_reels():
             "ytdll": info,
         }
     else:
-   #      cut = target[-11:]
-   #      url = "https://youtube-video-download-info.p.rapidapi.com/dl"
+         cut = target[-11:]
+         url = "https://youtube-video-download-info.p.rapidapi.com/dl"
 
-   #      querystring = {"id": cut}
+         querystring = {"id": cut}
 
-   #      headers = {
-	# "X-RapidAPI-Key": "6e7e0e613dmsh7da1932734a8a9ap14bcb6jsn4c51c4a9f466",
-	# "X-RapidAPI-Host": "youtube-video-download-info.p.rapidapi.com"
-   #    }
+         headers = {
+	 "X-RapidAPI-Key": "6e7e0e613dmsh7da1932734a8a9ap14bcb6jsn4c51c4a9f466",
+	 "X-RapidAPI-Host": "youtube-video-download-info.p.rapidapi.com"
+       }
 
-   #      response = requests.request("GET", url, headers=headers, params=querystring).json()
-       url = up.youtube(target)
+         response = requests.request("GET", url, headers=headers, params=querystring).json()
+      #  url = up.youtube(target)
 
-       response = {
-         'data': url,
-      }
+      #  response = {
+      #    'data': url,
+      # }
     if target[:32] == "https://www.youtube.com/watch?v=" or target[:31] == "https://www.youtube.com/shorts/" or target[:27] == "https://youtube.com/shorts/" or target[:17] == "https://youtu.be/":
        
        return (response)
