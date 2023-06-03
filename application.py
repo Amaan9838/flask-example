@@ -71,14 +71,14 @@ def scrap_reels():
 #     index = i % length
     pr_oxy = [0,1,2,3,4,5,6,7,8]
     index = random.choice(pr_oxy)
-    print(index)
+   #  print(index)
     proxyDict = {"http" : proxies[index], "https" : proxies[index]}
-    a = {"csrftoken":"ehvnfz5RZnuVTUNOaUcX4K8YzMjrMgQZ","sessionid":"53168773914%3AcdCaV6FhUUTh2f%3A17%3AAYdmqmmJjaPxPWud9nJYFaRiMZiziCdO85vj08Tacw"}#rocky__8081  Ashar123
+    a = {"csrftoken":"JIzYAn9hVRjoDdNIQnLsqFCoVouO1WMC","sessionid":"53168773914%3AD0YRVq8KvrDZCf%3A15%3AAYeyRlmOZf2XHeCEuLrRfccq-JNAPqUO9PMiBSRIsA"}#rocky__8081  Ashar123
     b =  {"csrftoken":"1jwyJ5QczmCIva5ROe2OOj8opDwazXL3","sessionid":"36744979802%3AmISFYgnEY22rzr%3A20%3AAYc4E5uksgDF77ikhfeHkkTbGplkf92-acsJYzzptQ"} #farzi_kalosxyz  246800
     d =  {"csrftoken":"dv7osDMXDhLX2lTOsbPPnQ4gBNDPsG3O","sessionid":"58499749216%3AnDhC7Z4zEP6AWi%3A17%3AAYeZCANvuq3KMl40YjQNMB_GLZS5VkIKpGmVO_BqtQ"} #amsterdam34158 Amaan@123
-    e =  {"csrftoken":"A6ledrZ83DJGCvmDYfF3vTIHQG1LOaCJ","sessionid":"53168773914%3Aafljno0aL18bpZ%3A23%3AAYcQfhhvaU7HHcy3YwKtp0x5bUbznwbsyqeKNMtYvw"}   #rocky__8081  Ashar123
-    f =  {"csrftoken":"yG0qeT6AdwIO2gUFLGSjvtYFYxhwA8eO","sessionid":"53168773914%3AiTndpEqqT0utPz%3A26%3AAYfZvE4oVH6l2zLFObt5svVqXXKFFJoAVk0uZ0pFjg"} #rocky__8081  Ashar123   
-    g =  {"csrftoken":"0KDtcmLuS6S5piO0dJkTLZd5J8SAb8o3","sessionid":"53168773914%3Ag8rfaOhrydC3XF%3A3%3AAYc2B6nN_8PwOUgla2ZxAwGyYhnLXypui8fyQtXpbQ"} #rocky__8081  Ashar123   
+    e =  {"csrftoken":"A6ledrZ83DJGCvmDYfF3vTIHQG1LOaCJ","sessionid":"53168773914%3Aafljno0aL18bpZ%3A23%3AAYcQfhhvaU7HHcy3YwKtp0x5bUbznwbsyqeKNMtYvw"}   #farzi_kalosxyz 246800
+    f =  {"csrftoken":"yG0qeT6AdwIO2gUFLGSjvtYFYxhwA8eO","sessionid":"53168773914%3AiTndpEqqT0utPz%3A26%3AAYfZvE4oVH6l2zLFObt5svVqXXKFFJoAVk0uZ0pFjg"} #farzi_kalosxyz  246800   
+    g =  {"csrftoken":"0KDtcmLuS6S5piO0dJkTLZd5J8SAb8o3","sessionid":"53168773914%3Ag8rfaOhrydC3XF%3A3%3AAYc2B6nN_8PwOUgla2ZxAwGyYhnLXypui8fyQtXpbQ"} #farzi_kalosxyz  246800   
 #a d
     c= [a,e,f,g]
     cookie_jar = random.choice(c)
