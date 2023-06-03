@@ -33,7 +33,7 @@ def youtube(url):
         # print(streams_audio.first().url)
 
         # print(streams_2160p_mp4.first())
-        # # streams_720p_download.download(filename="test_vid4.mp4")
+      streams_720p_download.download(filename="test_vid4.mp4")
         # print(streams_1440p_mp4)
         # print(streams_1080p_mp4)
 
