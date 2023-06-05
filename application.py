@@ -9,7 +9,6 @@ from datetime import datetime
 import requests
 import youtube_dl
 import random 
-from src import pytube
 from pytube import YouTube
 
 # creating a Flask app
